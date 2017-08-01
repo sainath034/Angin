@@ -1,0 +1,19 @@
+  <form ng-controller="AddUserController" name="adduser">
+      <h2>{{text}}</h2>
+      <span ng-show="{{FailedtoInsert}}">Failed</span>
+    <div class="form-group">
+      <label for="utname">User Type Name: *</label>
+      <input type="text" class="form-control" id="utname" placeholder="Enter first name." name="utname" ng-model="UserTypeName" ng-required="true">
+    </div>
+    <div class="form-group">
+      <label for="utcode">User Type Code: *</label>
+      <input type="text" class="form-control" id="utcode" placeholder="Enter middle name." name="utcode" ng-model="UserTypeCode" required>
+    </div>
+      <div class="form-group">
+        <label for="module">Modules: *</label>
+        <select ng-model="Modules" multiple ng-options="module.ModuleName for module in modules">
+    </select>
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="AddUserType()" ng-disabled="adduser.$invalid">Add</button>
+    <button type="submit" class="btn btn-default"ui-sref="usertype">Back</button>
+  </form>

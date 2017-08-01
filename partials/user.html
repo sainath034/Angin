@@ -1,0 +1,29 @@
+<h2>{{text}}</h2>
+<button type="submit" class="btn btn-default" ui-sref="addusertype">Add</button>
+<hr/>
+<div ng-controller="ViewUserController">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Code</th>
+                <th>Modules</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="usertype in usertypes">
+                <td>{{usertype.UserTypeName}}</td>
+                <td>{{usertype.UserTypeCode}}</td>
+                <td>
+                    <div ng-repeat="module in usertype.Modules">
+                        <span>{{module.ModuleName}}</span>
+                    </div>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-default" ui-sref="editusertype({id:usertype._id})">Edit</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

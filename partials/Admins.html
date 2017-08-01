@@ -1,0 +1,18 @@
+<h2>{{text}}</h2>
+  <form ng-controller="ModuleController" name="register">
+      <span ng-show="{{FailedtoInsert}}">Failed</span>
+    <div class="form-group">
+      <label for="mname">Module Name: *</label>
+      <input type="text" class="form-control" id="mname" placeholder="Enter module name." name="mname" ng-model="ModuleName" required>
+    </div>
+    <div class="form-group">
+      <label for="mcode">Module Code: *</label>
+      <input type="text" class="form-control" id="mname" placeholder="Enter middle name." name="mname" ng-model="MiddleName" required>
+    </div>
+      <div class="form-group">
+      <label for="utype">User Types: *</label>
+    <select ng-model="UserType" ng-options="usertype for usertype in usertypes">
+    </select>
+    </div>
+    <button type="submit" class="btn btn-default" ng-click="CreateModule()" ng-disabled="register.$invalid">Submit</button>
+  </form>
